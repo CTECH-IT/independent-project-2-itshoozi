@@ -1,1 +1,32 @@
-/* Put your CSS here */
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300;700&display=swap');
+
+
+:root {
+    --gray: #586F6B;
+    font-family: 'Archivo', sans-serif;
+  }
+
+
+button {
+    background-color: var(--gray);
+    border-radius: 20px;
+    padding: 20px 80px 20px 80px;
+  }
+
+  .card {
+      background: var(--gray);
+  }
+  h1 {
+      font-weight: 700;
+  }
+
+  p {
+      font-weight: 300;
+  }
+
+  /* nav bar css */
+
+  nav {
+      padding: 20px;
+      background: var(--gray);
+  }
