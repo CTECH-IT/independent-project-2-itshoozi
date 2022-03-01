@@ -13,6 +13,17 @@ html {
   scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--gray);
+    border-radius: 10px;
+  }
+
+
 * {
   margin: 0;
 }
@@ -40,6 +51,7 @@ button:hover {
 .card {
   background: var(--gray);
 }
+
 h1 {
   font-weight: 700;
   margin-bottom: 0px;
@@ -52,23 +64,39 @@ p {
 /* nav bar css */
 
 nav {
-  padding: 3px 20px 3px 20px;
   background: var(--gray);
-  position: fixed;
   width: 100%;
+  position: fixed;
 }
 
 .nav-nestled {
   max-width: 80rem /* 448px */;
   display: flex;
+  flex-direction: column;
   margin: auto;
+  padding: 3px 20px;
 }
 
+@media all and (min-width:768px){
+.nav-nestled {
+  max-width: 80rem /* 448px */;
+  display: flex;
+  margin: auto;
+  flex-direction: row;
+  padding: 3px 20px;
+}
+}
 .nav-title {
   color: var(--header);
-  margin: 15px 0;
+  margin: 15px 0 5px 0;
   align-self: center;
+  font-size: 1.5em;
 }
+
+@media all and (min-width:768px){
+  .nav-title {
+    font-size: 2em;
+}}
 
 .nav-title-container {
   color: var(--p);
@@ -78,9 +106,15 @@ nav {
 .nav-links {
   text-decoration: none;
   color: white;
-  font-size: 1.2em;
+  font-size: 1em;
   transition: 300ms;
+  margin: 0 0 15px 0;
 }
+
+@media all and (min-width:768px){
+  .nav-links {
+    font-size: 1.2em;
+}}
 
 .nav-links:hover {
   color: var(--thirdary);
@@ -89,11 +123,16 @@ nav {
 .nav-link-container {
   gap: 30px;
   display: flex;
-  width: 100%;
-  justify-content: center;
-  display: flex;
-  justify-content: flex-end;
+  flex-grow: 1;
+  justify-content: flex-start;
   align-items: center;
+}
+
+@media all and (min-width:768px){
+  .nav-link-container {
+    justify-content: flex-end;
+    align-items: center;
+  }
 }
 
 /* header css */
@@ -109,10 +148,12 @@ header {
   margin: auto;
   padding: 3px 20px 3px 20px;
   display: flex;
+  padding-top: 6em;
+
 }
 
 .header-left {
-    width: 50%;
+    width: 100%;
     background: gree;
 
     align-items: center;
@@ -120,16 +161,26 @@ header {
     text-align: left;
     flex-direction: column;
     justify-content: center;
+}
 
+@media all and (min-width:768px){
+  .header-left {
+width: 50%
+}
 }
 
 .header-right {
-    width: 50%;
-    background: back;
+    width: 0%;
     justify-content: center;
     display: flex;
     justify-content: flex-center;
     align-items: center;
+}
+
+@media (min-width: 768px) {
+  .header-right {
+  width: 50%
+  }
 }
 
 .header-title {
@@ -158,6 +209,13 @@ header {
 .header-image {
     height: 100%;
     width: 70%;
+    display: none;
+}
+
+@media (min-width: 768px) {
+  .header-image {
+    display: block;
+  }
 }
 
 .hundred {
