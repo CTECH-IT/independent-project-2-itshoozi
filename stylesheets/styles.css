@@ -53,6 +53,8 @@ p {
 nav {
   padding: 3px 20px 3px 20px;
   background: var(--gray);
+  position: fixed;
+  width: 100%;
 }
 
 .nav-nestled {
