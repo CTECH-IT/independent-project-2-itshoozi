@@ -2,27 +2,30 @@
 
 :root {
   --gray: #2d3045;
+  --dark-gray: #8287AC;
+  --mid-gray: #979DBF;
+  --light-gray: #CBCFE9;
   --secondary: #464d7b;
   --thirdary: #7982c2;
-  --header: white;
+  --header: #B3B8D8;
   --p: rgb(211, 211, 211);
 }
 
 html {
   font-family: "Archivo", sans-serif;
   scroll-behavior: smooth;
+  background: var(--light-gray);
 }
 
 ::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
-  }
+  width: 5px;
+  height: 5px;
+}
 
-  ::-webkit-scrollbar-thumb {
-    background: var(--gray);
-    border-radius: 10px;
-  }
-
+::-webkit-scrollbar-thumb {
+  background: var(--gray);
+  border-radius: 10px;
+}
 
 * {
   margin: 0;
@@ -63,10 +66,15 @@ p {
 
 /* nav bar css */
 
+.spacer {
+  height: 6rem;
+}
+
 nav {
   background: var(--gray);
   width: 100%;
   position: fixed;
+  align-items: center;
 }
 
 .nav-nestled {
@@ -77,14 +85,14 @@ nav {
   padding: 3px 20px;
 }
 
-@media all and (min-width:768px){
-.nav-nestled {
-  max-width: 80rem /* 448px */;
-  display: flex;
-  margin: auto;
-  flex-direction: row;
-  padding: 3px 20px;
-}
+@media all and (min-width: 768px) {
+  .nav-nestled {
+    max-width: 80rem /* 448px */;
+    margin: auto;
+    flex-direction: row;
+    padding: 3px 20px;
+    align-items: center;
+  }
 }
 .nav-title {
   color: var(--header);
@@ -93,14 +101,22 @@ nav {
   font-size: 1.5em;
 }
 
-@media all and (min-width:768px){
+@media all and (min-width: 768px) {
   .nav-title {
+    margin:  15px 0;
     font-size: 2em;
-}}
+  }
+}
 
 .nav-title-container {
   color: var(--p);
   flex-shrink: 0;
+  align-items: center;
+}
+
+.center {
+  display: flex;
+  align-items: center;
 }
 
 .nav-links {
@@ -111,10 +127,17 @@ nav {
   margin: 0 0 15px 0;
 }
 
-@media all and (min-width:768px){
+@media all and (min-width: 768px) {
+  .nav-links {
+  margin:  15px 0;
+}
+}
+
+@media all and (min-width: 768px) {
   .nav-links {
     font-size: 1.2em;
-}}
+  }
+}
 
 .nav-links:hover {
   color: var(--thirdary);
@@ -126,9 +149,10 @@ nav {
   flex-grow: 1;
   justify-content: flex-start;
   align-items: center;
+  align-items: center;
 }
 
-@media all and (min-width:768px){
+@media all and (min-width: 768px) {
   .nav-link-container {
     justify-content: flex-end;
     align-items: center;
@@ -140,7 +164,9 @@ nav {
 header {
   background-color: var(--secondary);
   margin: 0px;
-  padding: 5% 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 .header-nestled {
@@ -149,37 +175,34 @@ header {
   padding: 3px 20px 3px 20px;
   display: flex;
   padding-top: 6em;
-
 }
 
 .header-left {
-    width: 100%;
-    background: gree;
-
-    align-items: center;
-    display: flex;
-    text-align: left;
-    flex-direction: column;
-    justify-content: center;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  justify-content: center;
 }
 
-@media all and (min-width:768px){
+@media all and (min-width: 768px) {
   .header-left {
-width: 50%
-}
+    width: 50%;
+  }
 }
 
 .header-right {
-    width: 0%;
-    justify-content: center;
-    display: flex;
-    justify-content: flex-center;
-    align-items: center;
+  width: 0%;
+  justify-content: center;
+  display: flex;
+  justify-content: flex-center;
+  align-items: center;
 }
 
 @media (min-width: 768px) {
   .header-right {
-  width: 50%
+    width: 50%;
   }
 }
 
@@ -197,19 +220,18 @@ width: 50%
 }
 
 .header-button {
-    float: left;
+  float: left;
 }
 
 .button-div {
-    margin: 10px 0 0 0;
-    width: 100%;
+  margin: 10px 0 0 0;
+  width: 100%;
 }
 
-
 .header-image {
-    height: 100%;
-    width: 70%;
-    display: none;
+  height: 100%;
+  width: 70%;
+  display: none;
 }
 
 @media (min-width: 768px) {
@@ -218,10 +240,57 @@ width: 50%
   }
 }
 
-.hundred {
-    height: 50vh;
+.gray {
+  background: gray;
 }
 
-.gray {
-    background: gray;
+
+/* what we do div */
+
+.feature-div {
 }
+
+.feature-div-nestled {
+  max-width: 80rem /* 448px */;
+  margin: auto;
+  padding: 3px 20px 3px 20px;
+  display: flex;
+}
+
+.feature-card {
+  padding: 2em;
+  border-radius: 8px;
+  background: var(--mid-gray);
+  -webkit-box-shadow: 5px 5px 10px 2px #8287AC;
+box-shadow: 5px 5px 10px 2px #8287AC;
+}
+
+.feature-heading {
+  margin: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "First-Feature"
+    "Second-Feature . ."
+    "Third-Feature . .";
+}
+
+@media (min-width: 768px) {
+  .container {
+    grid-template-areas:
+      "First-Feature Second-Feature Third-Feature"
+      ". . ."
+      ". . .";
+}}
+
+.First-Feature { grid-area: First-Feature; }
+
+.Second-Feature { grid-area: Second-Feature; }
+
+.Third-Feature { grid-area: Third-Feature; }
