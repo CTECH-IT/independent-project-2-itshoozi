@@ -2,12 +2,12 @@
 
 :root {
   --gray: #2d3045;
-  --dark-gray: #8287AC;
-  --mid-gray: #979DBF;
-  --light-gray: #CBCFE9;
+  --dark-gray: #8287ac;
+  --mid-gray: #979dbf;
+  --light-gray: #cbcfe9;
   --secondary: #464d7b;
   --thirdary: #7982c2;
-  --header: #B3B8D8;
+  --header: #b3b8d8;
   --p: rgb(211, 211, 211);
 }
 
@@ -103,7 +103,7 @@ nav {
 
 @media all and (min-width: 768px) {
   .nav-title {
-    margin:  15px 0;
+    margin: 15px 0;
     font-size: 2em;
   }
 }
@@ -129,8 +129,8 @@ nav {
 
 @media all and (min-width: 768px) {
   .nav-links {
-  margin:  15px 0;
-}
+    margin: 15px 0;
+  }
 }
 
 @media all and (min-width: 768px) {
@@ -244,53 +244,148 @@ header {
   background: gray;
 }
 
-
 /* what we do div */
-
-.feature-div {
-}
 
 .feature-div-nestled {
   max-width: 80rem /* 448px */;
   margin: auto;
   padding: 3px 20px 3px 20px;
   display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .feature-div-nestled {
+    flex-direction: row;
+  }
 }
 
 .feature-card {
   padding: 2em;
   border-radius: 8px;
   background: var(--mid-gray);
-  -webkit-box-shadow: 5px 5px 10px 2px #8287AC;
-box-shadow: 5px 5px 10px 2px #8287AC;
+  -webkit-box-shadow: 5px 5px 10px 2px #8287ac;
+  box-shadow: 5px 5px 10px 2px #8287ac;
 }
 
 .feature-heading {
   margin: 0;
 }
 
-.container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "First-Feature"
-    "Second-Feature . ."
-    "Third-Feature . .";
+.feature-description {
+  color: var(--secondary);
 }
 
 @media (min-width: 768px) {
-  .container {
-    grid-template-areas:
-      "First-Feature Second-Feature Third-Feature"
-      ". . ."
-      ". . .";
-}}
+  .feature-div {
+    margin-top: -75px;
+  }
+}
 
-.First-Feature { grid-area: First-Feature; }
+@media (min-width: 1024px) {
+  .feature-div {
+    margin-top: -150px;
+  }
+}
 
-.Second-Feature { grid-area: Second-Feature; }
+@media (min-width: 2560px) {
+  .feature-div {
+    margin-top: -350px;
+  }
+}
 
-.Third-Feature { grid-area: Third-Feature; }
+.green {
+  color: rgb(66, 117, 66);
+}
+
+.red {
+  color: rgb(161, 28, 28);
+}
+
+
+/* Image Gallery */
+
+.gallery {
+  background-color: var(--secondary);
+  margin: 0px;
+  padding: 5% 0;
+}
+
+.gallery-nestled {
+  max-width: 80rem /* 448px */;
+  margin: auto;
+  padding: 3px 20px 3px 20px;
+}
+
+.box {
+  min-width: 250px;
+  max-width: 250px;
+  max-height: 150px;
+  min-height: 150px;
+
+}
+
+.blue {
+  background: blue;
+}
+
+.redb {
+  background: red;
+}
+
+.gap {
+  gap: 20px;
+  display: flex;
+    overflow-x: scroll;
+  justify-content: space-between;
+  white-space: no-wrap;
+  flex: 0 1 auto;
+  padding-bottom: 10px;
+  
+}
+
+@media (min-width: 768px) {
+  .gap {
+    flex-direction: column;
+        overflow-x: hidden;
+      padding-bottom: 0px;
+  padding-right: 10px;
+
+
+  }
+}
+
+.flex {
+  display: flex;
+  height: 100vh;
+  gap: 20px;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .flex {
+    flex-direction: row;
+    height: 50vh;
+  }
+}
+
+@media (min-width: 1024px) {
+  .flex {
+    flex-direction: row;
+    height: 80vh;
+  }
+}
+
+.thumbnail {
+  background: green;
+  height: full;
+  flex-grow: 1;
+
+}
+
+@media (min-width: 768px) {
+  .thumbnail {
+    order: 1;
+  }
+}
