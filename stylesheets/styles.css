@@ -277,23 +277,10 @@ header {
   color: var(--secondary);
 }
 
-@media (min-width: 768px) {
-  .feature-div {
-    margin-top: -75px;
-  }
+.feature-div {
+  margin: 35px 0;
 }
 
-@media (min-width: 1024px) {
-  .feature-div {
-    margin-top: -150px;
-  }
-}
-
-@media (min-width: 2560px) {
-  .feature-div {
-    margin-top: -350px;
-  }
-}
 
 .green {
   color: rgb(66, 117, 66);
@@ -358,7 +345,7 @@ header {
 
 .flex {
   display: flex;
-  height: 100vh;
+  height: 70vh;
   gap: 20px;
   flex-direction: column;
 }
@@ -388,4 +375,36 @@ header {
   .thumbnail {
     order: 1;
   }
+}
+
+/* interest form */
+
+.interest {
+  margin: 0px;
+  padding: 5% 0;
+}
+
+.interest-nestled {
+  max-width: 80rem /* 448px */;
+  margin: auto;
+  padding: 3px 20px 3px 20px;
+}
+
+input {
+  outline: none;
+  padding: 15px;
+  width: 80vh;
+  border-radius: 8px;
+  background: none;
+  border: none;
+  border-radius: 15px;
+  background-color: var(--mid-gray);
+  box-shadow: -15px -15px 15px rgba(225, 225, 225, 0.2),
+     15px 15px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.6s;
+  color: var(--gray)
+}
+
+input:focus {
+  box-shadow: none;
 }
