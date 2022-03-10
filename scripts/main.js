@@ -1,9 +1,7 @@
-// Put your JavaScript here
 const DETAIL_IMAGE_SELECTOR = '[data-image-role="target"]';
 const DETAIL_TITLE_SELECTOR = '[data-image-role="title"]';
 const DETAIL_FRAME_SELECTOR = '[data-image-role="frame"]';
 const THUMBNAIL_LINK_SELECTOR = '[data-image-role="trigger"]';
-
 
 function setDetails (imageUrl, titleText) {
     'use strict';
@@ -29,3 +27,26 @@ function setDetailsFromThumb(thumbnail) {
     'use strict';
     setDetails(imageFromThumb(thumbnail), titleFromThumb(thumbnail));
 }
+
+function addThumbClickHandler(thumb) {
+    'use strict';
+    thumb.addEventListener('click', function(event){
+        event.preventDefault();
+        setDetailsFromThumb(thumb);
+    });
+}
+
+function getThumbnailsArray() {
+    'use strict';
+    let thumbnails = document.querySelectorAll(THUMBNAIL_LINK_SELECTOR);
+    let thumbnailArray = [].slice.call(thumbnails); // this converts the NodeList to an array
+    return thumbnailArray;
+}
+
+function initalizeEvents(){
+    'use strict';
+    let thumbnails = getThumbnailsArray();
+    thumbnails.forEach(addThumbClickHandler);
+}
+
+initalizeEvents();
